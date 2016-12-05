@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Students Project</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+</head>
+<body>
+
+	<div class="container" ng-controller="myController">
+
+			<div class="jumbotron" >
+				<div class="container">
+					<h1>{{ title }}</h1>
+					<form ng-submit="findArtists($event)" action="" method="POST" class="form-inline" role="form">
+
+						<div class="form-group">
+							<label class="sr-only" for="">label</label>
+							<input ng-model="artistQuery" type="text" class="form-control" id="" placeholder="Input artist name...">
+						</div>
+
+						<button type="submit" class="btn btn-primary">Search</button>
+					</form>
+				</div>
+			</div>
+
+			<div class="form-group" >
+				<label for="input" class="col-sm-2 control-label">Artists:</label>
+				<div class="col-sm-2">
+					<select ng-model="idArtist" ng-change="findAlbums()"  name="" id="input" class="form-control" required="required">
+						<option ng-repeat="artist in artists" value="{{ artist.id }}">{{ artist.name }}</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group" >
+				<label for="input" class="col-sm-2 control-label">Albums:</label>
+				<div class="col-sm-2">
+					<select ng-model="idAlbums" ng-change="findTracks()"  name="" id="input" class="form-control" required="required">
+						<option ng-repeat="album in albums" value="{{ album.id }}">{{ album.name }}</option>
+					</select>
+				</div>
+			
+			<div class="form-group">
+				<label for="input" class="col-sm-2 control-label">Tracks:</label>
+				<ul>
+					<li ng-repeat="track in tracks"><a target="_blank" href="{{track.preview_url}}">{{ track.name }}</a></li> 
+				</ul>
+			</div>
+		</form>
+
+	</div>
+
+	<script src="https://opensource.keycdn.com/angularjs/1.5.8/angular.min.js "></script>
+
+	<script src="app.js"></script>
+	<script src="controller.js"></script>
+	<script src="service.js"></script>
+
+</body>
+</html>

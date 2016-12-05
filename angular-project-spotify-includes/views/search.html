@@ -1,0 +1,14 @@
+<div class="jumbotron"  ng-controller="searchController">
+	<div class="container">
+		<h1>{{ title }}</h1>
+		<form ng-submit="findArtists($event)" action="" method="POST" class="form-inline" role="form">
+
+			<div class="form-group">
+				<label class="sr-only" for="">label</label>
+				<input ng-model="artistQuery" type="text" class="form-control" id="" placeholder="Input artist name...">
+			</div>
+
+			<button type="submit" class="btn btn-primary">Search</button>
+		</form>
+	</div>
+</div>

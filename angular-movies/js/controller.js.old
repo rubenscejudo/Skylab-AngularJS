@@ -1,0 +1,34 @@
+angular.module('myApp',['myServices'])
+	.controller('popularController', function($scope, moviesService) {
+		console.log('controller 1');
+		$scope.findPopular = function(e) {
+			e.preventDefault();
+			moviesService.getPopular($scope.moviesQuery)
+				.then( function(response) {
+					// $rootScope.movies = response.results;
+				})
+		}
+
+	})
+	// .controller('artistsController', function($scope, $rootScope, spotifyService) {
+
+	// 	$scope.findAlbums = function() {
+	// 			spotifyService.getAlbums($scope.idArtist)
+	// 				.then( function(response) {
+	// 					$rootScope.albums = response.data.items;
+	// 				} )
+	// 		}
+
+	// })
+	// .controller('albumsController', function($scope, $rootScope, spotifyService) {
+
+	// 	$scope.findTracks = function() {
+	// 		console.log ("looking for tracks...")
+	// 			var idAlbum = $scope.dataAlbum.split("|")[0];
+	// 			$rootScope.coverAlbum = $scope.dataAlbum.split("|")[1];
+	// 			spotifyService.getTracks(idAlbum)
+	// 				.then( function(response) {
+	// 					$rootScope.tracks = response.data.items;
+	// 				} )
+	// 		}
+	// })

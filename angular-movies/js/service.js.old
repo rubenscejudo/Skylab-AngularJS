@@ -1,0 +1,19 @@
+angular.module('myServices', [])
+	.factory('moviesService', function($http) {
+			function getPopular() {
+				console.log('service OK');
+				return $http.get("https://api.themoviedb.org/3/movie/popular?api_key=2ff1afd98edb9e8d031379a195fd30d2&language=en-US");
+			}
+
+			// function getAlbums( artistId ) {
+			// 	return $http.get("https://api.spotify.com/v1/artists/" + artistId + "/albums");
+			// }
+
+			// function getTracks( albumId ) {
+			// 	return $http.get("https://api.spotify.com/v1/albums/" + albumId + "/tracks");
+			// }
+
+			return {
+				getPopular: getPopular
+			}
+	})

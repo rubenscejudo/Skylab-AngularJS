@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Students Project</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+</head>
+<body>
+
+	<div class="container">
+
+		<div ng-controller="studentsController">
+
+			<h1>{{ title }}</h1>
+
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Mark</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+
+	</div>
+
+	<script src="https://opensource.keycdn.com/angularjs/1.5.8/angular.min.js "></script>
+	<script>
+
+		angular.module('myApp',[])
+			.controller('studentsController', function($scope) {
+
+				var students = [
+					{ name: "Elois Tiano", mark: 5 },
+					{ name: "Shaunna Jelden", mark: 10 },
+					{ name: "Vinnie Henninger", mark: 7 },
+					{ name: "Tracey Alegria", mark: 9 },
+					{ name: "Tabatha Eighmey", mark: 6 },
+					{ name: "Carmina Selitto", mark: 7.5 }
+				];
+
+				$scope.students = students;
+				$scope.title = "Students Marks"
+
+			})
+
+
+	</script>
+</body>
+</html>

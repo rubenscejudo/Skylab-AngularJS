@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Beers Project</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+</head>
+<body>
+
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Beers of the World 🍻</h1>
+			<form id="beer-search" action="" method="POST" class="form-inline" role="form">
+
+				<div class="form-group">
+					<label class="sr-only" for="">label</label>
+					<input type="text" class="form-control"  placeholder="Input beer name...">
+				</div>
+
+				<button type="submit" class="btn btn-primary">Search!</button>
+			</form>
+		</div>
+	</div>
+
+	<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script>
+
+		$("#beer-search").on("submit", function(e) {
+
+			e.preventDefault();
+			var $input = $(this).find("input");
+			var beerQuery = $input.val();
+			var URL_SEARCH_API = "https://quiet-inlet-67115.herokuapp.com/api/search/all?q="
+			var urlSearchBeer = URL_SEARCH_API + beerQuery;
+
+			$.ajax({
+				url: urlSearchBeer,
+				dataType: 'json'
+			})
+			.done(function( dataBeers ) {
+				console.log(dataBeers);
+			})
+
+		})
+
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Beers Project</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+</head>
+<body>
+
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Beers of the World 🍻</h1>
+			<form action="bear-search" method="POST" class="form-inline" role="form">
+
+				<div class="form-group">
+					<label class="sr-only" for="">label</label>
+					<input type="text" class="form-control" placeholder="Input beer name...">
+				</div>
+
+
+				<button type="submit" class="btn btn-primary">Search</button>
+			</form>
+		</div>
+	</div>
+
+	<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script>
+		$("#beer-search").on("submit", function(e)){
+			e.preventDefault();
+			/*$(this).find("input") lo guardamos en una variable mejor*/ /*apunta al padre que el el formulario con el id... del form*/
+			var $input = $(this).find("input");
+			var beerQuery = $input.val();var URL_SEARCH= "https://quiet-inlet-67115.herokuapp.com/search/all?q="
+			var ul
+			console.log("form-submitted!"
+
+
+			!!! le evento on("change", function()).....
+			captura un cambio en el evento!!!
+		}
+
+	</script>
+
+</body>
+</html>

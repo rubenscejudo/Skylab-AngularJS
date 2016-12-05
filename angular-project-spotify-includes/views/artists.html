@@ -1,0 +1,7 @@
+<div class="form-group" ng-controller="artistsController">
+	<label for="input" class="col-sm-2 control-label">Artists:</label>
+	<select ng-model="idArtist" ng-change="findAlbums()" class="form-control" required="required">
+	 	<option ng-selected="true" value="">Select an artist...</option>
+		<option ng-repeat="artist in artists" value="{{ artist.id }}">{{ artist.name }}</option>
+	</select>
+</div>

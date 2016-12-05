@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Base Project</title>
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+
+	<style>
+		.active {
+			background: black !important;
+		}
+		.nav {
+			margin:0;
+		}
+	</style>
+</head>
+<body>
+
+	<header>
+
+			<nav class="navbar navbar-default navbar-static-top" role="navigation">
+				<div class="container">
+					<a class="navbar-brand" href="#">My Super Cool Project 😎</a>
+					<ul class="nav navbar-nav">
+						<li ng-class="{ active: activetab == 'home'}">
+							<a href="#/">Home</a>
+						</li>
+						<li ng-class="{ active: activetab == 'about'}">
+							<a href="#/about">About</a>
+						</li>
+						<li ng-class="{ active: activetab == 'contact'}">
+							<a href="#/contact">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+	</header>
+
+	<main>
+
+		<div class="container" ng-view>
+			<ng-view></ng-view>
+		</div>
+
+	</main>
+
+	<footer>
+		<div class="container">
+			<p>Copyright by @me</p>
+		</div>
+	</footer>
+
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controllers.js"></script>
+</body>
+</html>

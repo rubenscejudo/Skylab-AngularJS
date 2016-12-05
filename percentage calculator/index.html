@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myCalculator">
+<head>
+	<meta charset="UTF-8">
+	<title>Percentage Calculator</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="container" ng-controller="myController">
+
+		<section>
+			<h1>{{title}}</h1>
+
+			<form  action="#" class="form-inline form-group" ng-controller="myFirstOperation">
+				<fieldset class="row">
+					<div class="col-md-6 ">
+						<p>What is <input class="form-control"  type="text" size="3" ng-model="op1">% of <input class="form-control" type="text" size="7" ng-model="op2">?</p>
+					</div>
+					<div class="col-md-6">
+						<button  class="form-control btn btn-primary" ng-click="firstOperation()">Calculate</button>
+						<!-- result = a / 100 * b; -->
+						<input class="form-control" type="text" size="7" readonly="readonly" ng-model="result">
+						<span class="remove">%</span>
+					</div>
+				</fieldset>
+			</form>
+
+			<form action="#" class="form-group" ng-controller="mySecondOperation">
+				<fieldset class="row">
+					<div class="col-md-6">
+						<p><input type="text" size="5" ng-model="op1"> is what percent of <input type="text" size="5" ng-model="op2">?</p>
+					</div>
+					<div class="col-md-6">
+						<button class="btn btn-primary" ng-click="secondOperation()">Calculate</button>
+						<!-- result = a / b * 100; -->
+						<input type="text" size="7" readonly="readonly" ng-model="result">
+						<span>%</span>
+					</div>
+				</fieldset>
+			</form>
+		</section>
+	</div>	
+
+
+	<script src="https://opensource.keycdn.com/angularjs/1.5.8/angular.min.js "></script>
+
+	<script src="app.js"></script>
+	<script src="controller.js"></script>
+</body>
+</html>

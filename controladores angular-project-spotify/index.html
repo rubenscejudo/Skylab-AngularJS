@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Students Project</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+</head>
+<body>
+
+	<div class="container">
+
+			<div class="jumbotron"  ng-controller="searchController">
+				<div class="container">
+					<h1>{{ title }}</h1>
+					<form ng-submit="findArtists($event)" action="" method="POST" class="form-inline" role="form">
+
+						<div class="form-group">
+							<label class="sr-only" for="">label</label>
+							<input ng-model="artistQuery" type="text" class="form-control" id="" placeholder="Input artist name...">
+						</div>
+
+						<button type="submit" class="btn btn-primary">Search</button>
+					</form>
+				</div>
+			</div>
+
+			<div class="form-group" ng-controller="artistsController">
+				<label for="input" class="col-sm-2 control-label">Artists:</label>
+				<select ng-model="idArtist" ng-change="findAlbums()" class="form-control" required="required">
+				 	<option ng-selected="true" value="">Select an artist...</option>
+					<option ng-repeat="artist in artists" value="{{ artist.id }}">{{ artist.name }}</option>
+				</select>
+			</div>
+
+
+			<div class="form-group" ng-controller="albumsController">
+				<label for="input" class="col-sm-2 control-label">Albums:</label>
+				<select ng-model="dataAlbum" ng-change="findTracks()" class="form-control" required="required">
+				 	<option ng-selected="true" value="">Select an album...</option>
+					<option ng-repeat="album in albums" value="{{ album.id }}|{{ album.images[0].url }}">{{ album.name }}</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<h2>Tracks</h2>
+				<img ng-src="{{ coverAlbum }}" alt="">
+				<ul>
+					<li ng-repeat="track in tracks">{{ track.name }}</li>
+				</ul>
+			</div>
+
+
+	</div>
+
+	<script src="https://opensource.keycdn.com/angularjs/1.5.8/angular.min.js "></script>
+
+	<script src="app.js"></script>
+	<script src="controller.js"></script>
+	<script src="service.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+angular.module("myApp", ['ngRoute'])
+	.config( function($routeProvider) {
+		console.log('app ok');
+		$routeProvider
+			.when('/', {
+				templateUrl: 'views/popular.html',
+				controller: 'popularController'
+			})
+			.otherwise({redirectTo: '/'});
+
+	})

@@ -1,0 +1,7 @@
+<div class="form-group" ng-controller="albumsController">
+	<label for="input" class="col-sm-2 control-label">Albums:</label>
+	<select ng-model="dataAlbum" ng-change="findTracks()" class="form-control" required="required">
+	 	<option ng-selected="true" value="">Select an album...</option>
+		<option ng-repeat="album in albums" value="{{ album.id }}|{{ album.images[0].url }}">{{ album.name }}</option>
+	</select>
+</div>

@@ -1,0 +1,8 @@
+header, footer, .navbar-default {
+	background: #ccc;
+}
+
+footer {
+	margin-top: 30px;
+	padding-top: 10px;
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="todos.js"></script>
+    <link rel="stylesheet" href="todos.css">
+  </head>
+  <body>
+
+    <div ng-controller="TodoListController">
+      <h2>{{ title }}</h2>
+      <input ng-model="title" />
+
+      <span>{{remaining()}} of {{todos.length}} remaining</span>
+      [ <a href="" ng-click="archive()">archive</a> ]
+      <ul class="unstyled">
+        <li ng-repeat="todo in todos">
+          <label class="checkbox">
+            <input type="checkbox" ng-model="todo.done">
+            <span class="done-{{todo.done}}">{{todo.text}}</span>
+          </label>
+        </li>
+      </ul>
+      <form ng-submit="addTodo()">
+        <input type="text" ng-model="todoText"  size="30"
+               placeholder="add new todo here">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+    </div>
+  <!--   <script>
+      angular.module("todoApp", [])
+        .controller('TodoListController', function($scope) {
+
+          $scope.todos = [
+            { done: true, text: "Lorem ipsum dolor sit." },
+            { done: false, text: "Lorem ipsum dolor.." }
+          ]
+
+          $scope.addTodo = function() {
+            var newTask = {
+              done: false, text: $scope.todoText
+            }
+            $scope.todos.push(newTask);
+          }
+          $scope.archive = function() {}
+          $scope.remaining = function() {}
+
+        })
+
+    </script> -->
+  </body>
+</html>
